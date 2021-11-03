@@ -12,7 +12,7 @@ module ZBar
   rescue LoadError => le
     raise LoadError, [
       "Didn't find libzbar on your system",
-      "Searched in \"#{search_string}\"",
+      "Searched in #{paths.inspect}",
       "Please install zbar (http://zbar.sourceforge.net/) or set ZBAR_LIB if it's in a weird place",
       "FFI::Library::ffi_lib() failed with error: #{le}"
     ].join("\n")
